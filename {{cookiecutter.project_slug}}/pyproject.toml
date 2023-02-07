@@ -1,0 +1,49 @@
+[project]
+name = "{{ cookiecutter.project_slug }}"
+authors = [{name = "{{ cookiecutter.full_name }}", email = "{{ cookiecutter.email }}"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: GNU General Public License v3 (GPLv3)"]
+dynamic = ["version", "description"]
+requires-python = ">={{ cookiecutter.python_version }}"
+dependencies = []
+
+[project.urls]
+homepage = ""
+repository = ""
+
+[project.scripts]
+{{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli:main"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+
+[tool]
+
+[tool.black]
+preview = true
+line-length = {{ cookiecutter.line_length }}
+
+[tool.ruff]
+line-length = {{ cookiecutter.line_length }}
+
+[tool.pyright]
+reportImplicitStringConcatenation = false
+
+[tool.isort]
+# See: https://pycqa.github.io/isort/docs/configuration/options/#example-pyprojecttoml
+profile = "black"
+combine_as_imports = true
+sections = [
+    "FUTURE",
+    "STDLIB",
+    "THIRDPARTY",
+    "FIRSTPARTY",
+    "LOCALFOLDER"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
