@@ -15,11 +15,6 @@ repository = ""
 [project.scripts]
 {{ cookiecutter.project_slug }} = "{{ cookiecutter.project_slug }}.cli:main"
 
-[build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
-
-
 [tool]
 
 [tool.black]
@@ -47,3 +42,7 @@ sections = [
 [tool.pytest.ini_options]
 minversion = "6.0"
 testpaths = ["tests"]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"

@@ -55,7 +55,6 @@ def create_venv(venv_name, python_version):
             "setuptools",
             "build",
             "wheel",
-            "flit",
         ],
         text=True,
     )

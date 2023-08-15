@@ -9,6 +9,6 @@
   "version": "0.1.0",
   "python_version": "3.11",
   "open_source_license": "GNU General Public License v3",
-  "line_length": "120",
+  "line_length": "100",
   "create_venv": "y"
 }
